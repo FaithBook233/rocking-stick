@@ -1,0 +1,211 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/28/2019  17:37:05  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+F:\APP\KEIL\C51\BIN\BL51.EXE STARTUP.obj, RockingStick.obj TO RockingStick RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  RockingStick.obj (ROCKINGSTICK)
+  F:\APP\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  RockingStick (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     007EH     UNIT         ?PR?MAIN?ROCKINGSTICK
+            CODE    0081H     0070H     UNIT         ?CO?ROCKINGSTICK
+            CODE    00F1H     0055H     UNIT         ?C?LIB_CODE
+            CODE    0146H     001BH     UNIT         ?PR?_SETLED?ROCKINGSTICK
+            CODE    0161H     0017H     UNIT         ?PR?_SETP0?ROCKINGSTICK
+            CODE    0178H     0015H     UNIT         ?PR?_DELAYMS?ROCKINGSTICK
+            CODE    018DH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0199H     0003H     UNIT         ?PR?_SETP2?ROCKINGSTICK
+            CODE    019CH     0003H     UNIT         ?PR?_DELAYUS?ROCKINGSTICK
+
+
+
+OVERLAY MAP OF MODULE:   RockingStick (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ROCKINGSTICK
+
+?PR?MAIN?ROCKINGSTICK
+  +--> ?PR?_DELAYUS?ROCKINGSTICK
+  +--> ?PR?_DELAYMS?ROCKINGSTICK
+  +--> ?CO?ROCKINGSTICK
+  +--> ?PR?_SETP0?ROCKINGSTICK
+  +--> ?PR?_SETP2?ROCKINGSTICK
+
+?PR?_DELAYMS?ROCKINGSTICK
+  +--> ?PR?_DELAYUS?ROCKINGSTICK
+
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2019  17:37:05  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  RockingStick (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:018DH         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0190H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:018DH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:018DH         LINE#         133
+  C:018FH         LINE#         134
+  C:0190H         LINE#         135
+  C:0191H         LINE#         136
+  C:0193H         LINE#         185
+  C:0196H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ROCKINGSTICK
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  B:0090H.0       PUBLIC        vertical_key
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0003H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:0090H.1       PUBLIC        level_key
+  C:0081H         PUBLIC        text
+  C:0161H         PUBLIC        _setP0
+  C:0199H         PUBLIC        _setP2
+  C:0178H         PUBLIC        _delayMs
+  C:019CH         PUBLIC        _delayUs
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2019  17:37:05  PAGE 3
+
+
+  C:0146H         PUBLIC        _setLed
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _SETP0
+  D:0007H         SYMBOL        num
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0005H         SYMBOL        num1
+  -------         ENDDO         
+  C:0161H         LINE#         39
+  C:0161H         LINE#         40
+  C:0164H         LINE#         41
+  C:0164H         LINE#         42
+  C:0168H         LINE#         43
+  C:016DH         LINE#         44
+  C:0171H         LINE#         45
+  C:0175H         LINE#         46
+  C:0177H         LINE#         47
+  -------         ENDPROC       _SETP0
+  -------         PROC          _SETP2
+  D:0007H         SYMBOL        num
+  C:0199H         LINE#         48
+  C:0199H         LINE#         49
+  C:019BH         LINE#         50
+  -------         ENDPROC       _SETP2
+  -------         PROC          _SETLED
+  D:0002H         SYMBOL        num
+  C:0146H         LINE#         51
+  C:014AH         LINE#         52
+  C:0153H         LINE#         53
+  C:0160H         LINE#         54
+  -------         ENDPROC       _SETLED
+  -------         PROC          _DELAYUS
+  D:0007H         SYMBOL        d
+  C:019CH         LINE#         55
+  C:019CH         LINE#         56
+  C:019EH         LINE#         57
+  -------         ENDPROC       _DELAYUS
+  -------         PROC          _DELAYMS
+  D:0006H         SYMBOL        d
+  C:0178H         LINE#         59
+  C:017AH         LINE#         60
+  C:0180H         LINE#         61
+  C:0185H         LINE#         62
+  C:018AH         LINE#         63
+  C:018CH         LINE#         64
+  -------         ENDPROC       _DELAYMS
+  -------         PROC          MAIN
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  D:0001H         SYMBOL        le
+  D:0003H         SYMBOL        ver
+  -------         ENDDO         
+  C:0003H         LINE#         65
+  C:0003H         LINE#         67
+  C:0006H         LINE#         68
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/28/2019  17:37:05  PAGE 4
+
+
+  C:0008H         LINE#         69
+  C:0011H         LINE#         70
+  C:001AH         LINE#         71
+  C:001AH         LINE#         72
+  C:001AH         LINE#         73
+  C:0020H         LINE#         74
+  C:0025H         LINE#         75
+  C:0028H         LINE#         76
+  C:0028H         LINE#         79
+  C:002DH         LINE#         80
+  C:0035H         LINE#         81
+  C:0037H         LINE#         82
+  C:0056H         LINE#         83
+  C:0075H         LINE#         84
+  C:007AH         LINE#         85
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ROCKINGSTICK
+
+  -------         MODULE        ?C?UIDIV
+  C:00F1H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SETLED?ROCKINGSTICK
+
+Program Size: data=9.0 xdata=0 code=415
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

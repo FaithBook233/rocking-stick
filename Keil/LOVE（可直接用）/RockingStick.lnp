@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"RockingStick.obj" 
+TO "RockingStick" 
+RAMSIZE(256) 
